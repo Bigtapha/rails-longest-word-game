@@ -1,0 +1,11 @@
+<h1>Result</h1>
+
+<% if @result[:message] == 'well done'%>
+<p> <strong> Congratulations! </strong> <%= @attempt%> is a valid english word</p>
+<% elsif @result[:message] == 'not an english word' %>
+<p>Sorry but <strong><%= @attempt %> </strong> does not seem to be a valid English word ..</p>
+<% else @result[:message] == 'not in the grid'% %>
+<p>Sorry but <strong><%= @attempt %> </strong> can't be built out of <%= @grid %></p>
+<% end%>
+
+<%= link_to "Play again", "/new" %>
